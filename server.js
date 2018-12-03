@@ -2,8 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-const app = express();
 
+const app = express();
+const port = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
@@ -46,7 +47,7 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
   res.render('index.hbs', {
     pageTitle: 'Home Page',
-    welcomeMessage: 'Welcome bitches',
+    welcomeMessage: 'Welcome hello this is a website of sorts',
     currentYear: new Date().getFullYear()
   });
 
@@ -67,7 +68,7 @@ app.get('/bad', (req, res) => {
 
 // binds app to port on machine (local host)
 // second argument optional
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
   
 });
