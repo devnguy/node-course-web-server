@@ -79,7 +79,7 @@ create new file, projects.hbs
 app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
     pageTitle: 'Projects Page',
-    currentYear: new Date().getFullYear(),
+    currentYear: new Date().getFullYear()
   });
 });
 
