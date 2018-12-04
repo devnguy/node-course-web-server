@@ -60,6 +60,30 @@ app.get('/about', (req, res) => {
   });
 });
 
+// MAKING A PROJECT PAGE
+
+/*
+
+get request to /projects
+create new file, projects.hbs
+
+*/
+
+// app.get('/projects', (req, res) => {
+//   res.render('projects.hbs'), {
+//     pageTitle: 'Projects Page',
+//     currentYear: new Date().getFullYear()
+//   }
+// });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    currentYear: new Date().getFullYear(),
+  });
+});
+
+
 app.get('/bad', (req, res) => {
   res.send({
     error: 'Unable to handle request'
